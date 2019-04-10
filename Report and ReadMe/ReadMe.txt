@@ -8,6 +8,7 @@ This document describes execution instructions for running
 the python scripts in this project.
 
 ********************************
+Python Version Verified Compatibility: 3.6.8
 Python Library Requirements:
 - TensorFlow 1.13.x
     • pip install tensorflow
@@ -34,6 +35,18 @@ Original Data
 
 How To Use:
 
+IMPORTANT
+For the model to run correctly, you need to run dataNoising.py first so that the new noised
+dataset can be generated.
+
+***
+dataNoising.py
+***
+In its default state, dataNoising.py will execute and create data with instances of noise,
+each component taking up as much as 7% of the total volume of the original image. It will
+create 10 new images with noise for every image in the original dataset. Use this function
+if you would like to generate the new dataset.
+
 ***
 Main.py
 ***
@@ -43,14 +56,6 @@ are described there. You can change the parameters to re-train the models and/or
 select the model to train (train on original un-noised data or new noise-added data).
 This script will output the accuracy results of the model you have run to console, so
 make sure you are running the script in a terminal, or in an interpreter.
-
-***
-dataNoising.py
-***
-In its default state, dataNoising.py will execute and create data with instances of noise,
-each component taking up as much as 7% of the total volume of the original image. It will
-create 10 new images with noise for every image in the original dataset. Use this function
-if you would like to re-generate the new dataset.
 
 ***
 inspectImages.py
